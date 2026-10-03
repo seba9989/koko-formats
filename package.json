@@ -1,0 +1,77 @@
+{
+  "name": "@koko-anime/formats",
+  "version": "0.2.0",
+  "description": "Koko-ASS, Koko-Lexicon i Koko-Pack — parser, zapis i walidacja formatów projektu Koko-Anime (polski lektor z syntezy Kokoro PL).",
+  "keywords": [
+    "koko-anime",
+    "koko-ass",
+    "kokopack",
+    "ass",
+    "subtitles",
+    "lektor",
+    "tts",
+    "kokoro",
+    "arktype"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=20"
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./koko-ass": {
+      "types": "./dist/koko-ass/index.d.ts",
+      "default": "./dist/koko-ass/index.js"
+    },
+    "./koko-lexicon": {
+      "types": "./dist/koko-lexicon/index.d.ts",
+      "default": "./dist/koko-lexicon/index.js"
+    },
+    "./koko-pack": {
+      "types": "./dist/koko-pack/index.d.ts",
+      "default": "./dist/koko-pack/index.js"
+    },
+    "./types": {
+      "types": "./dist/types/index.d.ts",
+      "default": "./dist/types/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "clean": "node -e \"require('node:fs').rmSync('dist', { recursive: true, force: true })\"",
+    "build": "npm run clean && tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check": "npm run typecheck && npm test",
+    "prepublishOnly": "npm run check && npm run build"
+  },
+  "dependencies": {
+    "arkregex": "^0.0.12",
+    "arktype": "^2.1.0",
+    "fflate": "^0.8.2",
+    "smol-toml": "^1.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "~5.9.3",
+    "vitest": "^3.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

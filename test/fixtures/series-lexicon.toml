@@ -1,0 +1,19 @@
+format = "koko-lexicon"
+version = 1
+title = "Kusuriya no Hitorigoto"
+
+[entries.Jinshi]
+ipa = "dʑinɕi"
+stem = true
+forms = { Jinshiego = "dʑinˈɕiɛɡɔ", Jinshiemu = "dʑinˈɕiɛmu" }
+note = "eunuch nadzorujący pałac wewnętrzny"
+verified = true
+
+[entries.Gyokuyou]
+respell = "Giokujo"
+stem = true
+forms = { Gyokuyouji = "Giokujoji" }
+
+[entries."Konkubina Jin"]
+respell = "konkubina Dżin"
+forms = { "Konkubiny Jin" = "konkubina Dżin" }
